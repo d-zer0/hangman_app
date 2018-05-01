@@ -2,9 +2,15 @@
 
 require "sinatra"
 require "sinatra/reloader" if development?
+require_relative "views/shared/hangman"
 
 get '/' do
-	word = "Secret"
 	guess = params["guess"]
-	erb :"index.html", locals: {word: word, guess: guess} 
+	if defined?(hangman)
+		hangman.check(guess)
+	else
+		hangman = Hangman.new
+	end
+
+	erb :"index.html", locals: {guess: guess, hangman: hangman} 
 end

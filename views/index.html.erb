@@ -9,9 +9,13 @@
 	</form>
 	<p><%= message %></p>
 	<br>
-	<p>Guesses:</p>
-	<p><%= guesses.join(" ") %></p>
+	<p>Correct guesses:</p>
+	<p><%= correct_guesses.join(" ") %></p>
 	<br>
-	<p>Guesses: <%= guesses.length %>
+	<p>Wrong guesses: <%= incorrect_guesses.join(" ") %></p>
+	<br>
+	<p>No. of wrong guesses: <%= incorrect_guesses.length %></p>
+	<br>
+	<p>Remaining guesses: <%= 8 - incorrect_guesses.length %></p>
 </body>
 </html>

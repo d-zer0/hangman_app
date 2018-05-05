@@ -1,5 +1,15 @@
 def check(word, guess)
 	if word == guess
+		2 # player guessed whole word correctly
+	elsif word.include? guess
+		1 # player guessed a letter corectly
+	else
+		0 # player guessed a letter or word incorrectly
+	end
+end
+
+def message(word, guess)
+	if word == guess
 		message = "Correct! The word was #{word}"
 	elsif word.include? guess
 		message = "The word includes #{guess}"

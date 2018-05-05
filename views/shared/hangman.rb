@@ -1,27 +1,28 @@
-class Hangman
-	def initialize
-		@word = "Secret"
-		@guessed_letters = []
+def check(word, guess)
+	if word == guess
+		message = "Correct! The word was #{word}"
+	elsif word.include? guess
+		message = "The word includes #{guess}"
+	else
+		message = "No match for '#{guess}'"
 	end
+	message
+end
 
-	def guessed_letters
-		@guessed_letters
-	end
+=begin
 
-	def word
-		@word
-	end
+
 
 	def check(guess)
 		if guess.length == 1
-			if @word.include? "#{guess}"
+			if @@word.include? "#{guess}"
 				"The word contains #{guess}".
 			else
 				"The word does not include #{guess}"
 			end
-			@guessed_letters << guess
+			@@guessed_letters << guess
 		elsif guess.length > 1
-			if guess == @word
+			if guess == @@word
 				"Correct! The word was: #{word}"
 			else
 				"Sorry, wrong answer. Keep trying."
@@ -31,3 +32,5 @@ class Hangman
 		end
 	end
 end
+
+=end

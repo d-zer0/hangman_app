@@ -7,11 +7,11 @@
 	<form>
 		<input type="text" name="guess">
 	</form>
-	<p>The word is <%= hangman.word %></p>
-	<p>You guessed: <%= guess %></p>
+	<p><%= message %></p>
 	<br>
-	<p>Guessed letters:</p>
+	<p>Guesses:</p>
+	<p><%= guesses.join(" ") %></p>
 	<br>
-	<%= hangman.guessed_letters %>
+	<p>Guesses: <%= guesses.length %>
 </body>
 </html>
